@@ -174,4 +174,15 @@ function animateGallery() {
   const items = document.querySelectorAll('.gallery-item');
   items.forEach(item => {
     const rect = item.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 100){ item
+    if(rect.top < window.innerHeight - 100){ item.classList.add('visible');
+    }
+  });
+}
+
+// Trigger animations on scroll and page load
+window.addEventListener('scroll', animateGallery);
+window.addEventListener('load', animateGallery);
+</script>
+
+</body>
+  </html>
