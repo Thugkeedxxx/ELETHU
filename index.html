@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ELETHU ORGANIZATION (SDPRC)</title>
+<style>
+/* General Styles */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#fff;color:#333;}
+header{background:#2e7d32;color:#fff;padding:30px 20px;text-align:center;position:relative;overflow:hidden;}
+h1{margin-top:10px;font-size:24px;}
+p.slogan{font-style:italic;margin-top:5px;}
+nav{background:#1b5e20;padding:10px 0;text-align:center;}
+nav a{color:white;margin:0 15px;text-decoration:none;font-weight:500;cursor:pointer;}
+nav a:hover{text-decoration:underline;}
+section{max-width:1000px;margin:0 auto;padding:20px;}
+.page{opacity:0;transform:translateY(20px);transition:all 0.6s ease-out;display:none;}
+.page.active{opacity:1;transform:translateY(0);display:block;}
+
+/* Tree Animation */
+.tree-container{width:80px;height:100px;margin:0 auto;position:relative;}
+.trunk{width:12px;height:40px;background:#3e2723;margin:0 auto;border-radius:5px;animation:trunkGrow 2s ease-out forwards;}
+.leaves{width:60px;height:60px;background:#43a047;border-radius:50%;position:absolute;top:-40px;left:50%;transform:translateX(-50%) scale(0);animation:leavesGrow 2s ease-out forwards;animation-delay:1.5s;}
+@keyframes trunkGrow{from{height:0;}to{height:40px;}}
+@keyframes leavesGrow{from{transform:translateX(-50%) scale(0);}to{transform:translateX(-50%) scale(1);}}
+
+/* Hero Section */
+.hero{padding:50px 20px;text-align:center;background:#e8f5e9;}
+.hero h1{color:#2e7d32;font-size:2.2em;margin-bottom:10px;}
+.hero p{max-width:600px;margin:0 auto 20px;}
+
+/* Gallery Section */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:40px 20px;background:white;}
+.gallery-item{border-radius:10px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:transform 0.3s, opacity 0.8s ease-out, transform 0.8s ease-out;opacity:0;transform:translateY(30px);}
+.gallery-item.visible{opacity:1;transform:translateY(0);}
+.gallery-item img{width:100%;height:200px;object-fit:cover;}
+.gallery-item h3{color:#2e7d32;text-align:center;margin:10px 0;}
+.gallery-item p{text-align:center;padding:0 10px 20px;font-size:0.95em;}
+
+/* Join Us Button */
+.join-button{
+  background:#2e7d32;color:white;border:none;padding:15px 30px;font-size:1em;border-radius:8px;cursor:pointer;transition:all 0.3s;
+}
+.join-button:hover{background:#43a047;transform:scale(1.05);}
+
+/* Footer */
+footer{background:#2e7d32;color:white;text-align:center;padding:20px;}
+footer a{color:white;margin:0 10px;text-decoration:none;font-weight:500;}
+footer a:hover{color:#a5d6a7;text-decoration:underline;}
+
+/* Responsive */
+@media(max-width:600px){
+.hero h1{font-size:1.8em;}
+.gallery-item img{height:180px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tree-container">
+    <div class="trunk"></div>
+    <div class="leaves"></div>
+  </div>
+  <h1>ELETHU ORGANIZATION (SDPRC)</h1>
+  <p class="slogan">"ALWAYS CHASE QUALITY OVER QUANTITY"</p>
+</header>
+
+<nav>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('about')">About</a>
+  <a onclick="showPage('programs')">Programs</a>
+  <a onclick="showPage('contact')">Contact</a>
+</nav>
+
+<main>
+  <!-- Home Page -->
+  <div id="home" class="page active">
+    <section class="hero">
+      <h1>Skill Development for Rural Communities</h1>
+      <p>We focus on nurturing entrepreneurs and leaders in rural areas by providing practical training, mentorship, and skill development opportunities to empower future changemakers.</p>
+    </section>
+
+    <section class="gallery">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80" alt="Entrepreneurship">
+        <h3>Entrepreneurship</h3>
+        <p>Training and resources that help rural communities start and grow sustainable businesses.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80" alt="Leadership">
+        <h3>Leadership</h3>
+        <p>Building future leaders through mentorship, confidence building, and community leadership programs.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=800&q=80" alt="Community Training">
+        <h3>Community Training</h3>
+        <p>Workshops and development programs that focus on skill enhancement and local empowerment.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1581578017429-3a294a7aeb66?auto=format&fit=crop&w=800&q=80" alt="Innovation">
+        <h3>Innovation</h3>
+        <p>Encouraging innovation and creative solutions that address local community challenges.</p>
+      </div>
+    </section>
+
+    <!-- Join Us Button -->
+    <div style="text-align:center;margin:30px 0;">
+      <button class="join-button" onclick="showPage('contact')">Join Us / Get Involved</button>
+    </div>
+  </div>
+
+  <!-- About Page -->
+  <div id="about" class="page">
+    <section>
+      <h1>About ELETHU</h1>
+      <p>ELETHU ORGANIZATION (SDPRC) is dedicated to empowering individuals in rural communities by offering essential skills, leadership development, and entrepreneurial training. Our mission is to unlock potential in every participant and create a positive community impact.</p>
+      <p><strong>Vision:</strong> A world where rural communities thrive through skills, leadership, and innovation.</p>
+      <p><strong>Mission:</strong> To provide practical training and mentorship that fosters entrepreneurship and community development.</p>
+    </section>
+  </div>
+
+  <!-- Programs Page -->
+  <div id="programs" class="page">
+    <section>
+      <h1>Our Programs</h1>
+      <p>ELETHU runs several programs aimed at skill development, leadership training, and fostering entrepreneurship in rural communities.</p>
+      <ul>
+        <li>Hands-on Skills Workshops</li>
+        <li>Entrepreneurship Mentorship</li>
+        <li>Leadership Development Sessions</li>
+        <li>Innovation & Community Projects</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Contact Page -->
+  <div id="contact" class="page">
+    <section>
+      <h1>Contact Us</h1>
+      <p>We’re always open to collaborating and helping rural communities achieve their full potential.</p>
+      <p><strong>Phone:</strong> 060 954 6925</p>
+      <p><strong>Email:</strong> <a href="mailto:daprey965@gmail.com">daprey965@gmail.com</a></p>
+      <p><strong>Social:</strong> 
+        <a href="https://www.facebook.com/junior.duma" target="_blank">Facebook @Junior Duma</a> | 
+        <a href="https://www.facebook.com/itzthugkeed" target="_blank">Facebook @itz thugkeed</a> | 
+        <a href="https://www.instagram.com/thugkeed_sa" target="_blank">Instagram @thugkeed_sa</a> | 
+        <a href="https://www.tiktok.com/@thugkeed007" target="_blank">TikTok @thugkeed007</a>
+      </p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 ELETHU ORGANIZATION — Powered by THUGKEED TECH</p>
+</footer>
+
+<script>
+// Page Navigation & Fade-in
+function showPage(pageId){
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(p => p.classList.remove('active'));
+  const activePage = document.getElementById(pageId);
+  activePage.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+  
+  // Animate gallery items if Home
+  if(pageId === 'home'){ animateGallery(); }
+}
+
+// Gallery scroll animation
+function animateGallery() {
+  const items = document.querySelectorAll('.gallery-item');
+  items.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){ item
